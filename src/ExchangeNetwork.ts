@@ -114,11 +114,11 @@ export class ExchangeNetwork {
     }
 
     public getBestBidFor(pair: Pair): InterexchangeBest {
-        return this.getBestBidFor(pair);
+        return this.getBestPriceFor(pair, Side.Bid);
     }
 
     public getBestAskFor(pair: Pair): InterexchangeBest {
-        return this.getBestBidFor(pair);
+        return this.getBestPriceFor(pair, Side.Ask);
     }
 
     private throwError(name: string, err: string) {
