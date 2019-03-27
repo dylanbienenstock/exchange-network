@@ -8,7 +8,7 @@ This project is ***very new*** and ***very incomplete*** but fully usable in its
 * Use `npm test` to run unit tests with Alsatian.
 * Use `npm run coverage` to generate coverage reports using Istanbul.
 
-## 📈 Usage
+## Usage 📈
 
 ```
 let network = new ExchangeNetwork();
