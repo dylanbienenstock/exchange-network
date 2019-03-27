@@ -1,5 +1,8 @@
 # @dbstock/exchange-network
 
+[![Build Status](https://travis-ci.com/dylanbienenstock/exchange-network.svg?token=cpzxE2cW4j2zpzR3RNBm&branch=master)](https://travis-ci.com/dylanbienenstock/exchange-network)
+![Coverage Status](coverage-badge.svg)
+
 Provides classes and types for reconstructing multiple limit order books across multiple exchanges.
 
 This project is ***very new*** and ***very incomplete*** but fully usable in its current state.
