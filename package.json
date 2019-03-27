@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/types.d.ts",
   "scripts": {
+    "build": "tsc --build ./tsconfig.json",
     "test": "tsc --build ./spec/tsconfig.json && alsatian \"./spec/dist/**/*.spec.js\"",
     "coverage": "nyc --reporter=lcov --reporter=html npm test && nyc report",
     "make-badge": "nyc --reporter=lcov npm test && make-coverage-badge"
