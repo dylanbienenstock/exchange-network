@@ -1,0 +1,23 @@
+{
+  "name": "@dbstock/order-book",
+  "version": "1.0.0",
+  "description": "Reconstructs a limit order book",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "test": "tsc --build ./spec/tsconfig.json && alsatian \"./spec/dist/**/*.spec.js\"",
+    "coverage": "nyc --reporter=lcov --reporter=html npm test && nyc report",
+    "make-badge": "nyc --reporter=lcov npm test && make-coverage-badge"
+  },
+  "author": "Dylan Bienenstock",
+  "license": "ISC",
+  "devDependencies": {
+    "alsatian": "^3.0.0-alpha.2",
+    "coveralls": "^3.0.3",
+    "make-coverage-badge": "^1.1.1",
+    "nyc": "^13.3.0",
+    "tap-bark": "^1.0.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.4000"
+  }
+}

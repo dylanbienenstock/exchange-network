@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"module": "commonjs",
+		"target": "es5",
+		"noImplicitAny": true,
+		"outDir": "dist",
+		"experimentalDecorators": true,
+		"sourceMap": true
+	},
+	"include": [
+		"**/*.spec.ts"
+	],
+	"exclude": [
+		"**/node_modules/**/*"
+	]
+}
