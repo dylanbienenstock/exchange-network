@@ -8,7 +8,8 @@
     "build": "tsc --build ./tsconfig.json",
     "test": "tsc --build ./spec/tsconfig.json && alsatian \"./spec/dist/**/*.spec.js\"",
     "coverage": "nyc --reporter=lcov --reporter=html npm test && nyc report",
-    "make-coverage-badge": "node scripts/make-coverage-badge.js"
+    "make-coverage-badge": "node scripts/make-coverage-badge.js",
+    "docs": "typedoc --mode file --exclude **/sandbox.ts --out docs ./src"
   },
   "author": "Dylan Bienenstock",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "nyc": "^13.3.0",
     "tap-bark": "^1.0.0",
     "ts-node": "^8.0.3",
+    "typedoc": "^0.14.2",
     "typescript": "^3.3.4000"
   }
 }
