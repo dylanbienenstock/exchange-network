@@ -1,5 +1,6 @@
 # @dbstock/exchange-network
 
+![Dependencies Status](https://david-dm.org/dylanbienenstock/exchange-network.svg)
 [![Build Status](https://travis-ci.com/dylanbienenstock/exchange-network.svg?token=cpzxE2cW4j2zpzR3RNBm&branch=master)](https://travis-ci.com/dylanbienenstock/exchange-network)
 ![Coverage Status](coverage-badge.svg)
 
