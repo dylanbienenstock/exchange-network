@@ -8,7 +8,7 @@
     "build": "tsc --build ./tsconfig.json",
     "test": "tsc --build ./spec/tsconfig.json && alsatian \"./spec/dist/**/*.spec.js\"",
     "coverage": "nyc --reporter=lcov --reporter=html npm test && nyc report",
-    "make-coverage-badge": "nyc --reporter=lcov npm test && make-coverage-badge && mv coverage/badge.svg coverage-badge.svg"
+    "make-coverage-badge": "nyc --reporter=json-summary npm test && make-coverage-badge && mv coverage/badge.svg coverage-badge.svg"
   },
   "author": "Dylan Bienenstock",
   "license": "ISC",
