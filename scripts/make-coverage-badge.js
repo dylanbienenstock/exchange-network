@@ -1,5 +1,5 @@
 const { spawnSync } = require("child_process");
-const { readFileSync, writeFileSync } = require("fs");
+const { readFileSync, writeFileSync, unlinkSync } = require("fs");
 const { join } = require("path");
 const { createHash } = require("crypto");
 
@@ -20,11 +20,14 @@ let badgeDest = join(__dirname, "..", badgeLocalDest);
 
 writeFileSync(badgeDest, badge);
 
-// Put the new badge in README.md
+// Delete the old badge, put the new badge in README.md
 let readmeSource = join(__dirname, "../README.md");
 let badgeNameRegex = /img\/coverage-badge-.{32}\.svg/;
-let readme = readFileSync(readmeSource)
-    .toString("utf-8")
-    .replace(badgeNameRegex, badgeLocalDest);
+let readme = readFileSync(readmeSource).toString("utf-8");
+let lastBadgeLocalSource = readme.match(badgeNameRegex)[0];
+readme = readme.replace(lastBadgeLocalSource, badgeLocalDest);
+
+if (lastBadgeLocalSource != badgeLocalDest) 
+    unlinkSync(lastBadgeLocalSource);
 
 writeFileSync(readmeSource, readme);
