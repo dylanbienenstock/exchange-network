@@ -3,7 +3,7 @@ import { Pair, Market, ExchangeOrder, Side, InterexchangeBest } from "./types";
 import { pairToString } from "./Utility";
 
 export class ExchangeNetwork {
-    private exchanges: Map<string, Exchange>;
+    public exchanges: Map<string, Exchange>;
 
     constructor() {
         this.exchanges = new Map<string, Exchange>();
@@ -77,7 +77,7 @@ export class ExchangeNetwork {
         market.orderBook.delete(price, side);
     }
 
-    public getBestPriceFor(pair: Pair, side: Side, minimumAmount: number = 0): InterexchangeBest {
+    public getBestPriceFor(pair: Pair, side: Side, minAmount?: number): InterexchangeBest {
         let worstPricePossible = (side == Side.Bid)
             ? -Infinity
             :  Infinity;
@@ -98,7 +98,7 @@ export class ExchangeNetwork {
         
         markets.forEach(market => {
             let order = market.orderBook.getBestPrice(side);
-            let newBest = (order.amount >= minimumAmount) && (
+            let newBest = (!minAmount || (order.amount >= minAmount)) && (
                 side == Side.Bid
                     ? order.price > best.price
                     : order.price < best.price
@@ -114,12 +114,12 @@ export class ExchangeNetwork {
         return best;
     }
 
-    public getBestBidFor(pair: Pair): InterexchangeBest {
-        return this.getBestPriceFor(pair, Side.Bid);
+    public getBestBidFor(pair: Pair, minAmount?: number): InterexchangeBest {
+        return this.getBestPriceFor(pair, Side.Bid, minAmount);
     }
 
-    public getBestAskFor(pair: Pair): InterexchangeBest {
-        return this.getBestPriceFor(pair, Side.Ask);
+    public getBestAskFor(pair: Pair, minAmount?: number): InterexchangeBest {
+        return this.getBestPriceFor(pair, Side.Ask, minAmount);
     }
 
     private throwError(name: string, err: string) {
