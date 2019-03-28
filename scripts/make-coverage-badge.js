@@ -7,6 +7,8 @@ spawnSync("make-coverage-badge");
 
 let badgeSource = join(__dirname, "../coverage/badge.svg");
 let badgeDest = join(__dirname, "../coverage-badge.svg");
-let badge = readFileSync(badgeSource).toString("utf-8").toLowerCase();
+let badge = readFileSync(badgeSource)
+    .toString("utf-8")
+    .replace(/Coverage/g, "coverage");
 
 writeFileSync(badgeDest, badge);
