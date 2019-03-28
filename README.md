@@ -2,7 +2,7 @@
 
 ![Dependencies Status](https://david-dm.org/dylanbienenstock/exchange-network.svg)
 [![Build Status](https://travis-ci.com/dylanbienenstock/exchange-network.svg?token=cpzxE2cW4j2zpzR3RNBm&branch=master)](https://travis-ci.com/dylanbienenstock/exchange-network)
-![Coverage Status](coverage-badge.svg)
+![Coverage Status](img/coverage-badge-804fe44fb78684a6a6551fb33321ef9f.svg)
 
 Provides classes and types for reconstructing multiple limit order books across multiple exchanges.
 
