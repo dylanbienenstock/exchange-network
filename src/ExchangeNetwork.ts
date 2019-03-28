@@ -1,5 +1,6 @@
 import { Exchange } from "./Exchange";
 import { Pair, Market, ExchangeOrder, Side, InterexchangeBest } from "./types";
+import { pairToString } from "./Utility";
 
 export class ExchangeNetwork {
     private exchanges: Map<string, Exchange>;
@@ -35,7 +36,7 @@ export class ExchangeNetwork {
         let market = exchange.getMarket(pair);
 
         if (!market) {
-            let marketKey = this.pairToString(pair);
+            let marketKey = pairToString(pair);
             let marketErrorPrefix = `Market "${marketKey}" @ Exchange "${exchangeName}"`;
 
             throw new Error(`${marketErrorPrefix} does not exist`);
@@ -90,7 +91,7 @@ export class ExchangeNetwork {
         let markets = this.getAllMarketsFor(pair);
 
         if (markets.length == 0) {
-            let pairKey = this.pairToString(pair);
+            let pairKey = pairToString(pair);
 
             throw new Error(`Market "${pairKey}" does not exist on any exchanges`);
         }
@@ -123,11 +124,5 @@ export class ExchangeNetwork {
 
     private throwError(name: string, err: string) {
         throw new Error(`Exchange "${name}" ${err}`)
-    }
-
-    private pairToString(pair: Pair) {
-        return [pair.base, pair.quote]
-            .map(c => c.toString().toUpperCase())
-            .join("/");
     }
 }

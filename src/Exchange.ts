@@ -1,15 +1,16 @@
 import { OrderBook } from "./OrderBook";
 import { Pair, Market, MarketOrder, MarketOrderContext } from "./types";
+import { pairToString } from "./Utility";
 
 export class Exchange {
-    private markets: Map<string, Market>;
+    public markets: Map<string, Market>;
 
     constructor(public name: string) {
         this.markets = new Map<string, Market>();
     }
 
     public addMarket(pair: Pair): Market {
-        let key = this.pairToString(pair);
+        let key = pairToString(pair);
 
         if (this.markets.has(key))
             this.throwError(key, "already exists");
@@ -26,19 +27,19 @@ export class Exchange {
     }
 
     public deleteMarket(pair: Pair): void {
-        let key = this.pairToString(pair);
+        let key = pairToString(pair);
 
         this.markets.delete(key);
     }
 
     public getMarket(pair: Pair): Market {
-        let key = this.pairToString(pair);
+        let key = pairToString(pair);
 
         return this.markets.get(key);
     }
 
     public recordOrder(order: MarketOrder): void {
-        let key = this.pairToString(order.pair);
+        let key = pairToString(order.pair);
         let market = this.markets.get(key);
 
         if (!market) this.throwError(key, "does not exist");
@@ -51,18 +52,12 @@ export class Exchange {
     }
     
     public deleteOrder(price: number, context: MarketOrderContext): void {
-        let key = this.pairToString(context.pair);
+        let key = pairToString(context.pair);
         let market = this.markets.get(key);
 
         if (!market) this.throwError(key, "does not exist");
 
         market.orderBook.delete(price, context.side);
-    }
-
-    public pairToString(pair: Pair): string {
-        return [pair.base, pair.quote]
-            .map(c => c.toString().toUpperCase())
-            .join("/");
     }
 
     private throwError(key: string, err: string) {
