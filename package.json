@@ -1,5 +1,5 @@
 {
-  "name": "@dbstock/order-book",
+  "name": "@dbstock/exchange-network",
   "version": "1.0.0",
   "description": "Reconstructs a limit order book",
   "main": "dist/index.js",
@@ -22,5 +22,6 @@
     "ts-node": "^8.0.3",
     "typedoc": "^0.14.2",
     "typescript": "^3.3.4000"
-  }
+  },
+  "dependencies": {}
 }
