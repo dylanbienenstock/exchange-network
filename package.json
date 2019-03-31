@@ -2,8 +2,8 @@
   "name": "@dbstock/exchange-network",
   "version": "1.0.0",
   "description": "Reconstructs a limit order book",
-  "main": "dist/index.js",
-  "types": "dist/types.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc --build ./tsconfig.json",
     "test": "tsc --build ./spec/tsconfig.json && alsatian \"./spec/dist/**/*.spec.js\"",

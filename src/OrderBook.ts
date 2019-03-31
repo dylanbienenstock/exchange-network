@@ -1,5 +1,8 @@
+import { Side, Order } from "./types";
 import { OrderList } from "./OrderList";
-import { Side, BookOrder, Order, AggregatedOrder } from "./types";
+
+export interface BookOrderContext { side: Side };
+export interface BookOrder extends Order, BookOrderContext { };
 
 export class OrderBook {
     public bids: OrderList;

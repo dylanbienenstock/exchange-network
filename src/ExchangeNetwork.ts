@@ -1,6 +1,10 @@
-import { Exchange } from "./Exchange";
-import { Pair, Market, ExchangeOrder, Side, InterexchangeBest } from "./types";
+import { Side, Pair, Order } from "./types";
+import { Exchange, Market } from "./Exchange";
 import { pairToString } from "./Utility";
+
+export type ExchangeOrderContext = { exchangeName: string, side: Side, pair: Pair };
+export type ExchangeOrder = Order & ExchangeOrderContext;
+export type InterexchangeBest = { exchange: Exchange, price: number, amount: number };
 
 export class ExchangeNetwork {
     public exchanges: Map<string, Exchange>;

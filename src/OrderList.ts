@@ -1,4 +1,4 @@
-import { Side, Order, OrderNode, AggregatedOrder } from "./types";
+import { OrderNode, Side, Order, AggregatedOrder } from "./types";
 
 /** 
  * Stores open orders for one side of an order book 
