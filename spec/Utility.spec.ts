@@ -1,5 +1,5 @@
 import { TestFixture, Test, TestCase, Expect } from "alsatian";
-import { Pair } from "../src/types";
+import { Pair } from "../src/index";
 import { pairToString } from "../src/Utility";
 
 @TestFixture("Utilities")

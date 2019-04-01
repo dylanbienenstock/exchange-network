@@ -1,4 +1,4 @@
-import { Side, Order, AggregatedOrder } from "../src/types";
+import { Side, Order, AggregatedOrder } from "../src/index";
 
 export type RecordTestCase = {
     side: Side;

@@ -1,5 +1,5 @@
 import { Expect, Test, TestFixture, TestCase } from "alsatian";
-import { OrderList } from "../src/OrderList";
+import { OrderList } from "../src/index";
 import { recordTestCases } from "./OrderList.data.spec";
 
 @TestFixture("OrderList")

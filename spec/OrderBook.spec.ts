@@ -1,6 +1,6 @@
 import { Expect, Test, TestFixture, TestCase } from "alsatian";
 import { recordTestCases } from "./OrderList.data.spec";
-import { OrderBook, Side } from "../src/types";
+import { OrderBook, Side } from "../src/index";
 
 @TestFixture("OrderBook")
 export class OrderBookTests {

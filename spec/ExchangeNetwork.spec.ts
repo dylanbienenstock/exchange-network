@@ -1,5 +1,5 @@
 import { TestFixture, Test, TestCase, Expect } from "alsatian";
-import { Pair, Exchange, Market, ExchangeOrder, Side, ExchangeNetwork } from "../src/types";
+import { Pair, Exchange, Market, ExchangeOrder, Side, ExchangeNetwork } from "../src/index";
 import { pairToString } from "../src/Utility";
 import { testPairs } from "./Exchange.data.spec";
 import { recordTestCases } from "./OrderList.data.spec";

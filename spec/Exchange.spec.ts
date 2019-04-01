@@ -1,8 +1,8 @@
 import { TestFixture, Test, TestCase, Expect } from "alsatian";
-import { Pair, Exchange, Market, ExchangeOrder, Side } from "../src/types";
-import { pairToString } from "../src/Utility";
+import { Market, Pair, Exchange, Side } from "../src/index";
 import { testPairs } from "./Exchange.data.spec";
 import { recordTestCases } from "./OrderList.data.spec";
+import { pairToString } from "../src/Utility";
 
 @TestFixture("Exchange")
 export class ExchangeTests {
